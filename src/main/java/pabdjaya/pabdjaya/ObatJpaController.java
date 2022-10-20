@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import pabdjaya.pabdjaya.exceptions.IllegalOrphanException;
 import pabdjaya.pabdjaya.exceptions.NonexistentEntityException;
 import pabdjaya.pabdjaya.exceptions.PreexistingEntityException;
@@ -26,7 +27,7 @@ public class ObatJpaController implements Serializable {
     public ObatJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    private EntityManagerFactory emf = null;
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory(pabdjaya_pabdjaya_jar_0.0.1-SNAPSHOTPU);
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
